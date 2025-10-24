@@ -14,3 +14,5 @@ Route::get('/home', function(){
 Route::get('/about', function(){
     return view('About');
 });
+Route (web.php):
+Route::get('/admin/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
