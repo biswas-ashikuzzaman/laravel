@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
+            $table->string('account_number')->unique();
+            $table->string('holder_name');
+              $table->string('email')->unique();
+            $table->decimal('balance', 12,2)->default(0.00);
+            $table->string('account_type')->default('savings');
             $table->timestamps();
         });
     }
