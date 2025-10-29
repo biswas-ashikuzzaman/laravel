@@ -18,3 +18,8 @@ Route::get('/about', function(){
 Route::get('/accounts', [AccountController::class, 'index'])->name('accounts.index');
 Route::get('/accounts/create', [AccountController::class, 'create'])->name('accounts.create');
 Route::post('/accounts', [AccountController::class, 'store'])->name('accounts.store');
+Route::resource('accounts', AccountController::class);
+
+// Deposit & Withdraw routes
+Route::post('accounts/{account}/deposit', [AccountController::class, 'deposit'])->name('accounts.deposit');
+Route::post('accounts/{account}/withdraw', [AccountController::class, 'withdraw'])->name('accounts.withdraw');
