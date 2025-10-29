@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Account;
 use Illuminate\Http\Request;
 
-class AccountController extends Controller
-{
-    // ✅ List all accounts
+class AccountController
+{// ✅ List all accounts
     public function index()
     {
         $accounts = Account::all();
@@ -92,6 +90,4 @@ class AccountController extends Controller
 
         return back()->with('success', 'Withdrawn successfully!');
     }
-
-
 }
