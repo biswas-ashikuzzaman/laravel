@@ -1,0 +1,87 @@
+/* ==== Light Professional Dashboard Theme ==== */
+
+/* Base background colors */
+body {
+  background-color: #f8f9fa !important;
+  color: #212529 !important;
+}
+
+/* Header and Sidebar */
+.header, #sidebar {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-right: 1px solid #e9ecef;
+}
+
+/* Navbar brand and text */
+.navbar .brand-text strong {
+  color: #007bff !important;
+}
+
+/* Navbar icons */
+.navbar .nav-link, .navbar .fa, .navbar i {
+  color: #495057 !important;
+}
+
+/* Sidebar text and icons */
+#sidebar a, #sidebar i {
+  color: #495057 !important;
+}
+
+#sidebar a:hover, #sidebar li.active > a {
+  background-color: #e9ecef !important;
+  color: #007bff !important;
+}
+
+/* Cards / blocks */
+.block {
+  background-color: #ffffff !important;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Page header */
+.page-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Progress bar colors */
+.dashbg-1 { background-color: #007bff !important; }
+.dashbg-2 { background-color: #28a745 !important; }
+.dashbg-3 { background-color: #ffc107 !important; }
+.dashbg-4 { background-color: #17a2b8 !important; }
+
+/* Footer */
+.footer {
+  background-color: #ffffff !important;
+  border-top: 1px solid #dee2e6;
+  color: #6c757d;
+}
+
+/* Hover effects */
+a:hover {
+  text-decoration: none;
+  color: #0056b3 !important;
+}
+
+/* Avatars, images */
+.avatar img, .img-fluid.rounded-circle {
+  border: 2px solid #dee2e6;
+}
+
+/* Search panel background */
+.search-panel {
+  background: rgba(255,255,255,0.95);
+}
+
+/* Dropdowns */
+.dropdown-menu {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f3f5;
+}
