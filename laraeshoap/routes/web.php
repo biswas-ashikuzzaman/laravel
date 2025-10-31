@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 // Dashboard route using UserController
 Route::get('/dashboard', [UserController::class, 'index'])
