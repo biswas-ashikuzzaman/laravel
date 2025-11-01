@@ -25,4 +25,9 @@ class AdminController extends Controller
         $categories = Category::all();
         return view('admin.viewcategory', compact('categories'));
     }
+    public function deleteCategory($id){
+$category=Category::findOrFail($id);
+$category->delete();
+return redirect()->back()->with('deletecategory_message','Deleted Successfully!');
+    }
 }
