@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
+
 class AdminController extends Controller
 {
     public function addCategory()
@@ -60,10 +61,11 @@ return redirect()->back()->with('deletecategory_message','Deleted Successfully!'
        // For demonstration, we'll just return a success message
        return redirect()->back()->with('product_message', 'Product added successfully!');
    }
-//     public function viewProduct()
-//     {
-//         return view('admin.viewproduct');
-// }
+public function viewProduct()
+{
+    $products = Product::all();
+    return view('admin.viewproduct', compact('products'));
+}
 //     public function viewOrder()
 //     {
 //         return view('admin.vieworder');

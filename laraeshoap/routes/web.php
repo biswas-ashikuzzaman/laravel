@@ -24,7 +24,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/view_category', [AdminController::class, 'viewCategory'])->name('admin.viewcategory');
     Route::get('/delete_category/{id}', [AdminController::class, 'deleteCategory'])->name('admin.deleteCategory');
     Route::get('/add_product', [AdminController::class, 'addProduct'])->name('admin.addproduct');
-    // Route::get('/view_product', [AdminController::class, 'viewProduct'])->name('admin.viewproduct');
+    Route::get('/view_product', [AdminController::class, 'viewProduct'])->name('admin.viewproduct');
+
     //  Route::get('/view_order', [AdminController::class, 'viewOrder'])->name('admin.vieworder');
      Route::post('/add_product', [AdminController::class, 'postAddProduct'])->name('admin.postaddproduct');
 });
