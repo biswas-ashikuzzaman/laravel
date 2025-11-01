@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WebController;
 
 Route::get('/', function () {
     return view('index');
@@ -31,7 +32,8 @@ Route::middleware('auth')->group(function () {
      Route::get('/edit_product/{id}', [AdminController::class, 'editProduct'])->name('admin.editproduct');
 Route::get('/delete_product/{id}', [AdminController::class, 'deleteProduct'])->name('admin.deleteproduct');
 Route::post('/update_product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateproduct');
-
+//rout for web view latest products
+Route::get('/', [WebController::class, 'index'])->name('web.index');
 });
 
 require __DIR__ . '/auth.php';
