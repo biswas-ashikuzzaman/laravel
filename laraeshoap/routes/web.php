@@ -34,6 +34,7 @@ Route::get('/delete_product/{id}', [AdminController::class, 'deleteProduct'])->n
 Route::post('/update_product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateproduct');
 //rout for web view latest products
 Route::get('/', [WebController::class, 'index'])->name('web.index');
+
 });
 
 require __DIR__ . '/auth.php';

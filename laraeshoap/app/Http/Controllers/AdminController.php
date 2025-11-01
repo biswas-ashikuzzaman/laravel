@@ -144,4 +144,5 @@ class AdminController extends Controller
 
         return redirect()->back()->with('product_message', 'Product deleted successfully!');
     }
+    
 }
