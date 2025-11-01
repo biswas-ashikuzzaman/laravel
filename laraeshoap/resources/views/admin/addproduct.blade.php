@@ -1,9 +1,9 @@
 @extends('admin.maindesign')
 
 @section('add_category')
-    @if(session('category_message'))
+    @if(session('product_message'))
         <div class="alert alert-success mt-3">
-            {{ session('category_message') }}
+            {{ session('product_message') }}
         </div>
     @endif
 

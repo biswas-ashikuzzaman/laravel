@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
-
+use Illuminate\Support\Facades\Storage;
+use App\Models\Product;
 class AdminController extends Controller
 {
     public function addCategory()
@@ -38,7 +39,22 @@ return redirect()->back()->with('deletecategory_message','Deleted Successfully!'
     }
      public function postAddProduct(Request $request)
    {
-    $categories= Category::all();
+    $product = new Product();
+
+    $product->product_title = $request->product_title;
+    $product->product_description = $request->product_description;
+    $product->product_quantity = $request->product_quantity;
+    $product->product_price = $request->product_price;
+    $product->product_category = $request->product_category;
+    // Handle image upload
+    if ($request->hasFile('product_image')) {
+        $image = $request->file('product_image');
+        $imageName = time() . '_' . $image->getClientOriginalName();
+        $image->move(public_path('product_images'), $imageName);
+        $product->product_image = $imageName;
+    }
+
+    $product->save();
     
        // Validate and save the product details
        // For demonstration, we'll just return a success message
