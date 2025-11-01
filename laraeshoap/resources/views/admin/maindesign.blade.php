@@ -141,7 +141,8 @@
                     <li><a href="{{ route('admin.addproduct') }}">Add Product</a></li>
                    <li><a href="{{ route('admin.viewproduct') }}">View Product</a></li>
 
-                    <li><a href="#"></a></li>
+                   <li><a href="{{ route('admin.vieworders') }}">View Order</a></li>
+
                   </ul>
                 </li>
         </ul><span class="heading">Extras</span>
@@ -164,6 +165,7 @@
           @yield('view_category')
           @yield('add_product')
            @yield('view_product')
+            @yield('view_order')
         </section>
         <!--END MAiN CONTENT Section-->
         <footer class="footer">

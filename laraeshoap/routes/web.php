@@ -28,13 +28,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/view_product', [AdminController::class, 'viewProduct'])->name('admin.viewproduct');
 
     //  Route::get('/view_order', [AdminController::class, 'viewOrder'])->name('admin.vieworder');
-     Route::post('/add_product', [AdminController::class, 'postAddProduct'])->name('admin.postaddproduct');
-     Route::get('/edit_product/{id}', [AdminController::class, 'editProduct'])->name('admin.editproduct');
-Route::get('/delete_product/{id}', [AdminController::class, 'deleteProduct'])->name('admin.deleteproduct');
-Route::post('/update_product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateproduct');
-//rout for web view latest products
-Route::get('/', [WebController::class, 'index'])->name('web.index');
-
+    Route::post('/add_product', [AdminController::class, 'postAddProduct'])->name('admin.postaddproduct');
+    Route::get('/edit_product/{id}', [AdminController::class, 'editProduct'])->name('admin.editproduct');
+    Route::get('/delete_product/{id}', [AdminController::class, 'deleteProduct'])->name('admin.deleteproduct');
+    Route::post('/update_product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateproduct');
+    //rout for web view latest products
+    Route::get('/', [WebController::class, 'index'])->name('web.index');
+    Route::get('/view_order', [AdminController::class, 'viewOrders'])->name('admin.vieworders');
+    Route::get('/invoice/{id}', [AdminController::class, 'downloadInvoice'])->name('admin.downloadinvoice');
+    Route::post('/status/{id}', [AdminController::class, 'updateOrderStatus'])->name('admin.updateorderstatus');
 });
 
 require __DIR__ . '/auth.php';
