@@ -142,8 +142,6 @@
                     <li><a href="{{ route('admin.addproduct') }}">Add Product</a></li>
                    <li><a href="{{ route('admin.viewproduct') }}">View Product</a></li>
 
-                   <li><a href="{{ route('admin.vieworders') }}">View Order</a></li>
-
                   </ul>
                   
                 </li>
