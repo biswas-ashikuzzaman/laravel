@@ -30,4 +30,17 @@ $category=Category::findOrFail($id);
 $category->delete();
 return redirect()->back()->with('deletecategory_message','Deleted Successfully!');
     }
+    public function addProduct()
+    {
+        return view('admin.addproduct');
+    }
+    public function viewProduct()
+    {
+        return view('admin.viewproduct');
 }
+    public function viewOrder()
+    {
+        return view('admin.vieworder');
+    }
+}
+
