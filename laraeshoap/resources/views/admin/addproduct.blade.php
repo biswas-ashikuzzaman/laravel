@@ -8,15 +8,44 @@
     @endif
 
     <div class="container mt-4">
-<form action="{{route('admin.postaddproduct')}}" method="post">
-    @csrf
-    <input type="text" name="product_title" placeholder="Enter Product Title"/>
-    <textarea name="product_description" placeholder="Product Descriptions!"></textarea>
-    <input type="number" name="product_quantity" placeholder="Enter Product quantity here"/>
-    <input type="number" name="product_price" placeholder="Enter Product Price here"/>
-    <input type="text" name="product_category" placeholder="Enter Category Name"/>
-    <input type="submit" name="submit" value="Add Product"/>
-</form>
+        <form action="{{ route('admin.postaddproduct') }}" method="post" enctype="multipart/form-data" class="p-4 border rounded bg-light shadow-sm">
+            @csrf
 
-</div>
+            <div class="mb-3">
+                <label for="product_title" class="form-label">Product Title</label>
+                <input type="text" id="product_title" name="product_title" class="form-control" placeholder="Enter Product Title"/>
+            </div>
+
+            <div class="mb-3">
+                <label for="product_description" class="form-label">Product Description</label>
+                <textarea id="product_description" name="product_description" class="form-control" placeholder="Product Descriptions!"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="product_quantity" class="form-label">Quantity</label>
+                <input type="number" id="product_quantity" name="product_quantity" class="form-control" placeholder="Enter Product quantity here"/>
+            </div>
+
+            <div class="mb-3">
+                <label for="product_price" class="form-label">Price</label>
+                <input type="number" id="product_price" name="product_price" class="form-control" placeholder="Enter Product Price here"/>
+            </div>
+
+            <div class="mb-3">
+                <label for="product_category" class="form-label">Select Category</label>
+                <select id="product_category" name="product_category" class="form-select">
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->category }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="product_image" class="form-label">Product Image</label>
+                <input type="file" id="product_image" name="product_image" class="form-control"/>
+            </div>
+
+            <button type="submit" name="submit" class="btn btn-primary">Add Product</button>
+        </form>
+    </div>
 @endsection

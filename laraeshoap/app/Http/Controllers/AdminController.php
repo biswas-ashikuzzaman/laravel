@@ -23,7 +23,8 @@ class AdminController extends Controller
     public function viewCategory()
     {
         $categories = Category::all();
-        return view('admin.viewcategory', compact('categories'));
+        return view('admin.addproduct', compact('categories'));
+
     }
     public function deleteCategory($id){
 $category=Category::findOrFail($id);
@@ -32,15 +33,25 @@ return redirect()->back()->with('deletecategory_message','Deleted Successfully!'
     }
     public function addProduct()
     {
-        return view('admin.addproduct');
+        $categories = Category::all();
+        return view('admin.addproduct', compact('categories'));
     }
-    public function viewProduct()
-    {
-        return view('admin.viewproduct');
-}
-    public function viewOrder()
-    {
-        return view('admin.vieworder');
-    }
+     public function postAddProduct(Request $request)
+   {
+    $categories= Category::all();
+    
+       // Validate and save the product details
+       // For demonstration, we'll just return a success message
+       return redirect()->back()->with('product_message', 'Product added successfully!');
+   }
+//     public function viewProduct()
+//     {
+//         return view('admin.viewproduct');
+// }
+//     public function viewOrder()
+//     {
+//         return view('admin.vieworder');
+//     }
+  
 }
 
