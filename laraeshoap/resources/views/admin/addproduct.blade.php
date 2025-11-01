@@ -1,6 +1,6 @@
 @extends('admin.maindesign')
 
-@section('add_category')
+@section('add_product')
     @if(session('product_message'))
         <div class="alert alert-success mt-3">
             {{ session('product_message') }}

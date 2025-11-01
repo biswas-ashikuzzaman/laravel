@@ -28,6 +28,10 @@ Route::middleware('auth')->group(function () {
 
     //  Route::get('/view_order', [AdminController::class, 'viewOrder'])->name('admin.vieworder');
      Route::post('/add_product', [AdminController::class, 'postAddProduct'])->name('admin.postaddproduct');
+     Route::get('/edit_product/{id}', [AdminController::class, 'editProduct'])->name('admin.editproduct');
+Route::get('/delete_product/{id}', [AdminController::class, 'deleteProduct'])->name('admin.deleteproduct');
+Route::post('/update_product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateproduct');
+
 });
 
 require __DIR__ . '/auth.php';
