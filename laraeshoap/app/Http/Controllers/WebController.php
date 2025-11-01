@@ -12,5 +12,6 @@ class WebController extends Controller
         $latestProducts = Product::latest()->take(8)->get(); // Show latest 8 products
         return view('index', compact('latestProducts'));
     }
+    
 }
 

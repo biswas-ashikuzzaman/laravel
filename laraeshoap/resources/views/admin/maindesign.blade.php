@@ -127,7 +127,8 @@
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
-                <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
+               <li class="active"><a href="{{ route('web.index') }}"> <i class="icon-home"></i>Home </a></li>
+
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Category </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                     <li><a href="{{ route('admin.addcategory') }}">Add Category</a></li>
@@ -144,12 +145,20 @@
                    <li><a href="{{ route('admin.vieworders') }}">View Order</a></li>
 
                   </ul>
+                  
+                </li>
+                <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Order </a>
+                  <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                    <li><a href="{{ route('admin.vieworders') }}">View Order</a></li>
+
+                  </ul>
+                  
                 </li>
         </ul><span class="heading">Extras</span>
         <ul class="list-unstyled">
           {{-- <li> <a href="{{ route('admin.vieworder') }}"> <i class="icon-settings"></i>View Order </a></li> --}}
-          <li> <a href="#"> <i class="icon-writing-whiteboard"></i>Demo </a></li>
-          <li> <a href="#"> <i class="icon-chart"></i>Demo </a></li>
+          <li> <a href="#"> <i class="icon-writing-whiteboard"></i>Transaction </a></li>
+          <li> <a href="#"> <i class="icon-chart"></i>Reports </a></li>
         </ul>
       </nav>
       <!-- Sidebar Navigation end-->

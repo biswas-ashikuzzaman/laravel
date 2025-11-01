@@ -16,6 +16,7 @@ Route::get('/dashboard', [UserController::class, 'index'])
     ->name('dashboard');
 
 // Authenticated routes
+Route::get('/', [WebController::class, 'index'])->name('web.index');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
