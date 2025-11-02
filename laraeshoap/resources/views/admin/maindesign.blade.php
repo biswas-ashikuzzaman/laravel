@@ -171,6 +171,7 @@
           @yield('add_category')
           @yield('view_category')
           @yield('add_product')
+          @yield('edit_product')
            @yield('view_product')
             @yield('view_order')
         </section>
