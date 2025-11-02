@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
+use App\Models\Product;
 
 Route::get('/', function () {
     return view('index');
@@ -34,10 +35,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete_product/{id}', [AdminController::class, 'deleteProduct'])->name('admin.deleteproduct');
     Route::post('/update_product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateproduct');
     //rout for web view latest products
-    Route::get('/', [WebController::class, 'index'])->name('web.index');
+    // Route::get('/', [WebController::class, 'index'])->name('web.index');
     Route::get('/view_order', [AdminController::class, 'viewOrders'])->name('admin.vieworders');
     Route::get('/invoice/{id}', [AdminController::class, 'downloadInvoice'])->name('admin.downloadinvoice');
     Route::post('/status/{id}', [AdminController::class, 'updateOrderStatus'])->name('admin.updateorderstatus');
+    Route::get('/', function () {
+    $latestProducts = Product::latest()->take(10)->get(); // সর্বশেষ ১০টি প্রোডাক্ট
+    return view('index', compact('latestProducts'));
+})->name('index');
 });
 
 require __DIR__ . '/auth.php';

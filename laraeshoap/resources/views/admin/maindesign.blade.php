@@ -127,7 +127,7 @@
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
-               <li class="active"><a href="{{ route('web.index') }}"> <i class="icon-home"></i>Home </a></li>
+               <li class="active"><a href="#"> <i class="icon-home"></i>Home </a></li>
 
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Category </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
