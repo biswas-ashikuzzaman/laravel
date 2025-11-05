@@ -40,9 +40,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/invoice/{id}', [AdminController::class, 'downloadInvoice'])->name('admin.downloadinvoice');
     Route::post('/status/{id}', [AdminController::class, 'updateOrderStatus'])->name('admin.updateorderstatus');
     Route::get('/', function () {
-    $latestProducts = Product::latest()->take(10)->get(); // সর্বশেষ ১০টি প্রোডাক্ট
-    return view('index', compact('latestProducts'));
-})->name('index');
+        $latestProducts = Product::latest()->take(10)->get(); // সর্বশেষ ১০টি প্রোডাক্ট
+        return view('index', compact('latestProducts'));
+    })->name('index');
+    // product details
+    Route::get('/product/{id}', [AdminController::class, 'showProductDetails'])->name('product.details');
+
 });
 
 require __DIR__ . '/auth.php';
