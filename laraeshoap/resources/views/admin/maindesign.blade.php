@@ -155,6 +155,22 @@
                   </ul>
                   
                 </li>
+                <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Users </a>
+                  <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                    <li><a href="{{ route('admin.addcategory') }}">All Customers</a></li>
+                    <li><a href="{{ route('admin.viewcategory') }}">User Roles & Permissions</a></li>
+                    
+                   
+                  </ul>
+                </li>
+                <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Coupons </a>
+                  <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                    <li><a href="{{ route('admin.addcategory') }}">Coupon List</a></li>
+                    <li><a href="{{ route('admin.viewcategory') }}">Create Coupon</a></li>
+                    
+                   
+                  </ul>
+                </li>
         </ul><span class="heading">Extras</span>
         <ul class="list-unstyled">
           {{-- <li> <a href="{{ route('admin.vieworder') }}"> <i class="icon-settings"></i>View Order </a></li> --}}

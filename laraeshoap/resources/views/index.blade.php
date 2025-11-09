@@ -147,32 +147,50 @@
 
   <!-- shop section -->
 
-  <section class="shop_section layout_padding">
-    <div class="container mt-5">
+  <!-- shop section -->
+<section class="shop_section layout_padding">
+  <div class="container mt-5">
     <h3 class="mb-4">Latest Products</h3>
+
     <div class="row">
         @forelse($latestProducts as $product)
             <div class="col-md-3 mb-4">
-                <div class="card h-100">
+                <div class="card h-100" style="border-radius:10px;">
+                    
                     @if($product->product_image)
-                        <img src="{{ asset('product_images/' . $product->product_image) }}" class="card-img-top" alt="{{ $product->product_title }}">
+                        <img src="{{ asset('product_images/' . $product->product_image) }}" 
+                             class="card-img-top"
+                             alt="{{ $product->product_title }}"
+                             style="height:200px; object-fit:cover;">
                     @else
-                        <img src="{{ asset('images/default.png') }}" class="card-img-top" alt="No image">
+                        <img src="{{ asset('images/default.png') }}" 
+                             class="card-img-top"
+                             alt="No image"
+                             style="height:200px; object-fit:cover;">
                     @endif
-                    <div class="card-body">
+                    
+                    <div class="card-body text-center">
                         <h5 class="card-title">{{ $product->product_title }}</h5>
                         <p class="card-text">{{ Str::limit($product->product_description, 60) }}</p>
-                        <p class="card-text"><strong>৳{{ $product->product_price }}</strong></p>
+                        <p class="card-text text-danger fw-bold">৳{{ $product->product_price }}</p>
                     </div>
+
+                    <div class="card-footer bg-white text-center">
+                        <a href="{{ route('add.to.cart', $product->id) }}" 
+                           class="btn btn-sm btn-primary w-100">
+                           <i class="fa fa-shopping-cart"></i> Add to Cart
+                        </a>
+                    </div>
+
                 </div>
             </div>
         @empty
             <p class="text-muted">No products available.</p>
         @endforelse
     </div>
-</div>
-
-  </section>
+  </div>
+</section>
+<!-- end shop section -->
 
   <!-- end shop section -->
 
