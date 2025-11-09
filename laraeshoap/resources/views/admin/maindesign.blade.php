@@ -148,6 +148,9 @@
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Order </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                     <li><a href="{{ route('admin.vieworders') }}">View Order</a></li>
+                    <li><a href="{{ route('admin.vieworders') }}">Pending Orders</a></li>
+                    <li><a href="{{ route('admin.vieworders') }}">Processing Orders</a></li>
+                    <li><a href="{{ route('admin.vieworders') }}">Cancelled Orders</a></li>
 
                   </ul>
                   
