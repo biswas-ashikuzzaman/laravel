@@ -11,6 +11,7 @@ use App\Http\Controllers\OrderController;
 Route::get('/', function () {
     return view('index');
 })->name('index');
+Route::get('/products/{id}', [UserController::class, 'productDetails'])->name('product_details');
 
 // Dashboard route using UserController
 Route::get('/dashboard', [UserController::class, 'index'])
@@ -47,12 +48,6 @@ Route::middleware('auth')->group(function () {
     // product details
     Route::get('/product/{id}', [AdminController::class, 'showProductDetails'])->name('product.details');
 // Cart section 
-Route::get('/add-to-cart/{id}', [CartController::class,'addToCart'])->name('add.to.cart');
-Route::get('/cart', [CartController::class,'cartView'])->name('cart.view');
-Route::get('/cart/remove/{id}', [CartController::class,'remove'])->name('cart.remove');
-Route::post('/cart/update/{id}', [CartController::class,'update'])->name('cart.update');
-Route::get('/my-orders', [OrderController::class, 'myOrders'])->name('user.orders');
-Route::get('/admin/orders', [OrderController::class, 'adminOrders'])->name('admin.orders');
 
 });
 
