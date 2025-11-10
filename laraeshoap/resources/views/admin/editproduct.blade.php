@@ -1,4 +1,5 @@
 @extends('admin.maindesign')
+<base href="/public">
 
 @section('edit_product')
     <div class="container mt-4">
