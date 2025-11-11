@@ -148,7 +148,7 @@
   <!-- shop section -->
 
   <!-- shop section -->
-<section class="shop_section layout_padding">
+{{-- <section class="shop_section layout_padding">
   <div class="container mt-5">
     <h3 class="mb-4">Latest Products</h3>
 
@@ -196,7 +196,7 @@
     </div>
   </div>
   
-</section>
+</section> --}}
 <section class="shop_section layout_padding">
     @yield('index')
     @yield('product_details')
