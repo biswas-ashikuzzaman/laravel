@@ -175,6 +175,10 @@ public function adminOrders(){
     $orders = Order::with('items.product','user')->get();
     return view('admin.orders', compact('orders'));
  }
+ public function adminOrders(){
+    $orders = Order::with('items.product','user')->get();
+    return view('admin.orders', compact('orders'));
+ }
  
 
 }
