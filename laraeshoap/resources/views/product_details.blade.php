@@ -28,7 +28,7 @@
 
             <!-- Action Buttons -->
             <div class="mt-3">
-                <a href="{{ route('add_to_cart') }}" type="button" class="btn btn-success">🛒 Add to Cart</a>
+                <button type="button" class="btn btn-success">🛒 Add to Cart</button>
                 <button type="button" class="btn btn-outline-danger">❤️ Add to Wishlist</button>
             </div>
         </div>
