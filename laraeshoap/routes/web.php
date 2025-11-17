@@ -50,14 +50,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/product/{id}', [UserController::class, 'productDetails'])->name('product.details');
     Route::get('/product/{id}', [AdminController::class, 'showProductDetails'])->name('product.details');
 // Cart section 
-
-    Route::get('/add_to_cart/{id}', [CartController::class, 'addToCart'])->name('add_to_cart');
-    Route::get('/view_cart', [CartController::class, 'viewCart'])->name('view_cart');
-    Route::get('/remove_from_cart/{id}', [CartController::class, 'removeFromCart'])->name('remove_from_cart');
-    // Order section
-    Route::get('/place_order', [OrderController::class, 'placeOrder'])->name('place_order');
-    Route::post('/confirm_order', [OrderController::class, 'confirmOrder'])->name('confirm_order');
-    Route::get('/my_orders', [OrderController::class, 'myOrders'])->name('my_orders');  
+Route::get('/addtocart/{id}', [UserController::class, 'addToCart'])
+    ->middleware(['auth', 'verified'])
+    ->name('add_to_cart');
 });
 
 require __DIR__ . '/auth.php';
