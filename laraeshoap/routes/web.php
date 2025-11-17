@@ -51,6 +51,13 @@ Route::get('/product/{id}', [UserController::class, 'productDetails'])->name('pr
     Route::get('/product/{id}', [AdminController::class, 'showProductDetails'])->name('product.details');
 // Cart section 
 
+    Route::get('/add_to_cart/{id}', [CartController::class, 'addToCart'])->name('add_to_cart');
+    Route::get('/view_cart', [CartController::class, 'viewCart'])->name('view_cart');
+    Route::get('/remove_from_cart/{id}', [CartController::class, 'removeFromCart'])->name('remove_from_cart');
+    // Order section
+    Route::get('/place_order', [OrderController::class, 'placeOrder'])->name('place_order');
+    Route::post('/confirm_order', [OrderController::class, 'confirmOrder'])->name('confirm_order');
+    Route::get('/my_orders', [OrderController::class, 'myOrders'])->name('my_orders');  
 });
 
 require __DIR__ . '/auth.php';
