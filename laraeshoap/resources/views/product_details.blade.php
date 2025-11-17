@@ -3,17 +3,24 @@
 
 @section('product_details')
 <div class="container mt-5">
-    <!-- Product Details -->
+    
+    {{-- ## 📦 প্রোডাক্ট ডিটেইলস সেকশন --}}
     <div class="row">
         <div class="col-md-6">
-            <img src="{{ asset('images/sample-product.jpg') }}" class="img-fluid rounded" alt="Sample Product">
+            {{-- **ডাইনামিক ইমেজ** --}}
+            <img src="{{ asset('product_images/' . $product->product_image) }}" class="img-fluid rounded" alt="{{ $product->product_title }}">
         </div>
         <div class="col-md-6">
-            <h2>Wireless Headphones</h2>
-            <p><strong>Price:</strong> ৳2,999</p>
-            <p><strong>Stock:</strong> Available</p>
+            
+            {{-- **ডাইনামিক নাম** --}}
+            <h2>{{ $product->product_title }}</h2>
+            
+            {{-- **ডাইনামিক দাম** --}}
+            <p><strong>Price:</strong> ৳{{ number_format($product->product_price, 0, '.', ',') }}</p>
+            
+            {{-- স্টক (স্ট্যাটিক) --}}
+            <p><strong>Stock:</strong> Available</p> 
 
-            <!-- Rating Stars -->
             <p>
                 <strong>Rating:</strong>
                 <i class="fa fa-star" style="color: gold;"></i>
@@ -24,17 +31,19 @@
                 (4/5)
             </p>
 
-            <p>High-quality wireless headphones with noise cancellation and long battery life.</p>
+            {{-- **ডাইনামিক বিবরণ** --}}
+            <p>{{ $product->product_description }}</p>
 
-            <!-- Action Buttons -->
             <div class="mt-3">
                 <button type="button" class="btn btn-success">🛒 Add to Cart</button>
                 <button type="button" class="btn btn-outline-danger">❤️ Add to Wishlist</button>
             </div>
         </div>
     </div>
+    
+    <hr>
 
-    <!-- Review Section -->
+    {{-- ## 📝 রিভিউ সেকশন (স্ট্যাটিক থাকবে) --}}
     <div class="row mt-5">
         <div class="col-md-8">
             <h4>📝 Reviews</h4>
@@ -42,22 +51,17 @@
                 <strong>John Doe</strong> 
                 <span class="text-muted">(2 days ago)</span>
                 <p>Great sound quality and very comfortable to wear!</p>
-                <p>
-                    <i class="fa fa-star" style="color: orange;"></i>
-                    <i class="fa fa-star" style="color: orange;"></i>
-                    <i class="fa fa-star" style="color: orange;"></i>
-                    <i class="fa fa-star" style="color: orange;"></i>
-                    <i class="fa fa-star-o" style="color: orange;"></i>
-                </p>
+                {{-- ... (Rest of static review content) ... --}}
             </div>
         </div>
     </div>
 
-    <!-- Related Products -->
+    {{-- ## 🔗 রিলেটেড প্রোডাক্টস (স্ট্যাটিক থাকবে) --}}
     <div class="row mt-5">
         <div class="col-12">
             <h4>🔗 Related Products</h4>
         </div>
+        {{-- স্ট্যাটিক কার্ড ১ --}}
         <div class="col-md-3 mb-4">
             <div class="card h-100">
                 <img src="{{ asset('images/related1.jpg') }}" class="card-img-top" alt="Related Product 1">
@@ -68,6 +72,7 @@
                 </div>
             </div>
         </div>
+        {{-- স্ট্যাটিক কার্ড ২ --}}
         <div class="col-md-3 mb-4">
             <div class="card h-100">
                 <img src="{{ asset('images/related2.jpg') }}" class="card-img-top" alt="Related Product 2">
@@ -78,6 +83,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
 @endsection
