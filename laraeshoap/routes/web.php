@@ -46,6 +46,8 @@ Route::middleware('auth')->group(function () {
         return view('index', compact('latestProducts'));
     })->name('index');
     // product details
+    // প্রোডাক্ট ডিটেইলসের জন্য পাবলিক রাউট
+Route::get('/product/{id}', [UserController::class, 'productDetails'])->name('product.details');
     Route::get('/product/{id}', [AdminController::class, 'showProductDetails'])->name('product.details');
 // Cart section 
 
