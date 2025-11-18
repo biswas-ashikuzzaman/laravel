@@ -52,6 +52,17 @@ class UserController extends Controller
         $product_cart->quantity = 1;
         $product_cart->save();
 
+<<<<<<< Updated upstream
         return redirect()->back()->with('success_message', 'Product added to cart successfully!');
+=======
+        // প্রোডাক্টটি খুঁজে বের করা হচ্ছে
+        $product = Product::findOrFail($id);
+
+        // কার্টে প্রোডাক্ট যোগ করার লজিক এখানে যুক্ত করুন
+        // উদাহরণস্বরূপ, সেশন ব্যবহার করে কার্টে প্রোডাক্ট যোগ করা
+
+        // সফলভাবে কার্টে যোগ করার পর রিডাইরেক্ট এবং মেসেজ দেখানো
+        return redirect()->back()->with('cart_message', 'Product added to cart successfully!');
+>>>>>>> Stashed changes
     }
 }
