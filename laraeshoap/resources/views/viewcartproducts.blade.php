@@ -51,7 +51,7 @@
                                 <tr>
                                     <!-- 1. Image -->
                                     <td class="text-center">
-                                        <img src="{{ asset('cart_images/' . $cart_product->product->product_image) }}" 
+                                        <img src="{{ asset('storage/product_images/' . $cart_product->product->product_image) }}" 
                                              alt="{{ $cart_product->product->product_title }}"
                                              width="70" 
                                              height="70" 
@@ -86,9 +86,9 @@
 
                                     <!-- 6. Action Button (Remove) -->
                                     <td class="text-center">
-                                        <a href="{{ url('delete_cart_item', $cart_product->id) }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to remove this item from the cart?')">
-                                            <i class="bi bi-trash"></i> Remove
-                                        </a>
+                                        <a href="{{ route('removecartproducts', $cart_product->id) }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to remove this item from the cart?')">
+    <i class="bi bi-trash"></i> Remove
+</a>
                                     </td>
                                 </tr>
                             @endforeach

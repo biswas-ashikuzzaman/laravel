@@ -22,6 +22,10 @@ Route::get('/products/{id}', [UserController::class, 'productDetails'])
 Route::get('/cartproducts', [UserController::class, 'cartProducts'])
         ->middleware('auth') // কার্টে যোগ করার আগে ভেরিফিকেশন চেক
         ->name('cartproducts');
+        // Remove cart item
+        Route::get('/removecartproducts/{id}', [UserController::class, 'removeCartProducts'])
+        ->middleware('auth') 
+        ->name('removecartproducts');
 
 
 // ৪. অথেনটিকেশন রাউটস (Laravel Breeze বা Jetstream দ্বারা তৈরি)
