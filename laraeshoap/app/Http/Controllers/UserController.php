@@ -46,23 +46,33 @@ class UserController extends Controller
             return redirect()->route('login');
         }
 
-        $product_cart = new ProductCart();
-        $product_cart->user_id = Auth::id();
-        $product_cart->product_id = $id;
-        $product_cart->quantity = 1;
-        $product_cart->save();
-
-        return redirect()->back()->with('success_message', 'Product added to cart successfully!');
-
         // প্রোডাক্টটি খুঁজে বের করা হচ্ছে
         $product = Product::findOrFail($id);
 
-        // কার্টে প্রোডাক্ট যোগ করার লজিক এখানে যুক্ত করুন
-        // উদাহরণস্বরূপ, সেশন ব্যবহার করে কার্টে প্রোডাক্ট যোগ করা
+        // কার্ট আইটেম তৈরি/সংরক্ষণ
+        $product_cart = new ProductCart();
+        $product_cart->user_id = Auth::id();
+        $product_cart->product_id = $product->id;
+        $product_cart->quantity = 1;
+        $product_cart->save();
 
         // সফলভাবে কার্টে যোগ করার পর রিডাইরেক্ট এবং মেসেজ দেখানো
-        return redirect()->back()->with('cart_message', 'Product added to cart successfully!');
+        return redirect()->back()->with('success_message', 'Product added to cart successfully!');
+    }
+    // View cart products
+    public function cartProducts()
+    {   
+        if (Auth::check()) {
+         $count = ProductCart::where('user_id', Auth::id())->count();
+        $cart = ProductCart::where('user_id', Auth::id())->with('product')->get();
+      
+        } else {
+           $count = '';
+           
+        }
 
-
+       
+        
+       return view('viewcartproducts', compact('cart', 'count'));
     }
 }
