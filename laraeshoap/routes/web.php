@@ -26,12 +26,7 @@ Route::get('/cartproducts', [UserController::class, 'cartProducts'])
         Route::get('/removecartproducts/{id}', [UserController::class, 'removeCartProducts'])
         ->middleware('auth') 
         ->name('removecartproducts');
-        // web.php
-
-// Update cart item quantity
-Route::post('/updatecartquantity/{id}', [UserController::class, 'updateCartQuantity'])
-    ->middleware('auth') 
-    ->name('update.cart.quantity');
+        
 
 
 // ৪. অথেনটিকেশন রাউটস (Laravel Breeze বা Jetstream দ্বারা তৈরি)

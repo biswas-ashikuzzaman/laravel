@@ -81,4 +81,5 @@ class UserController extends Controller
         $cart_product->delete();
         return redirect()->back();
     }   
+    
 }
