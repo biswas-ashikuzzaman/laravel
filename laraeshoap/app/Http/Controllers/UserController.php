@@ -63,6 +63,9 @@ class UserController extends Controller
 
         // সফলভাবে কার্টে যোগ করার পর রিডাইরেক্ট এবং মেসেজ দেখানো
         return redirect()->back()->with('cart_message', 'Product added to cart successfully!');
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }
