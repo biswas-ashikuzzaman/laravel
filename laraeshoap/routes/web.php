@@ -12,11 +12,13 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 Route::get('/products/{id}', [UserController::class, 'productDetails'])->name('product_details');
-
+// Home page route
+Route::get('/', [UserController::class, 'home'])->name('index');
 // Dashboard route using UserController
 Route::get('/dashboard', [UserController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+    Route::get('/', [UserController::class, 'home'])->name('index');
 
 // Authenticated routes
 
@@ -53,6 +55,7 @@ Route::get('/product/{id}', [UserController::class, 'productDetails'])->name('pr
 Route::get('/addtocart/{id}', [UserController::class, 'addToCart'])
     ->middleware(['auth', 'verified'])
     ->name('add_to_cart');
+    Route::get('/', [UserController::class, 'home'])->name('home')->middleware('auth');
 });
 
 require __DIR__ . '/auth.php';
