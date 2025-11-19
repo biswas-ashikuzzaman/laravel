@@ -169,13 +169,5 @@ public function downloadInvoice($id)
         echo $invoice;
     }, 'invoice_' . $order->id . '.html');
 }
-// Product details 
-
-// public function adminOrders(){
-//     $orders = Order::with('items.product','user')->get();
-//     return view('admin.orders', compact('orders'));
-//  }
  
- 
-
 }
