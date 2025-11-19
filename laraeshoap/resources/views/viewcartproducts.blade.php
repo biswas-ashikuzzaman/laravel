@@ -30,6 +30,7 @@
         </div>
         <div class="card-body p-0">
             <div class="table-responsive">
+                
                 <table class="table table-striped table-hover align-middle mb-0">
                     <thead class="table-light">
                         <tr>
@@ -95,6 +96,12 @@
                         @endif
                     </tbody>
                 </table>
+                 @if(session('confirm_your_order'))
+        <div class="alert alert-success mt-3">
+            {{ session('confirm_your_order') }}
+        </div>
+    @endif
+               
             </div>
         </div>
     </div>
@@ -134,12 +141,19 @@
                                 </tr>
                             </tbody>
                         </table>
-                        
-                        <div class="d-grid gap-2 mt-3">
+                         <form action="{{ route('confirm_order') }}" method="post">
+                            @csrf
+                    <input type="text" name="receiver_address" placeholder="Enter Your Address" required> <br> <br><br>
+                    <input type="text" name="receiver_phone" placeholder="Enter Your Phone Number" required><br> <br><br>
+                    <input class="btn btn-primary" type="submit" type="submit" name="submit" value="Confirm Order"><br> <br><br>
+                    
+                        {{-- <div class="d-grid gap-2 mt-3">
                             <a href="#" class="btn btn-success btn-lg">
                                 <i class="bi bi-bag-check-fill"></i> Proceed to Checkout
                             </a>
-                        </div>
+                        </div> --}}
+                </form>
+                        
                     </div>
                 </div>
             </div>

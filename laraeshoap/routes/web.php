@@ -26,7 +26,9 @@ Route::get('/cartproducts', [UserController::class, 'cartProducts'])
         Route::get('/removecartproducts/{id}', [UserController::class, 'removeCartProducts'])
         ->middleware('auth') 
         ->name('removecartproducts');
-        
+         Route::post('/confirm_order', [UserController::class, 'confirmOrder'])
+        ->middleware('verified') // ইমেল ভেরিফিকেশন চেক
+        ->name('confirm_order');
 
 
 // ৪. অথেনটিকেশন রাউটস (Laravel Breeze বা Jetstream দ্বারা তৈরি)
@@ -70,8 +72,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete_product/{id}', [AdminController::class, 'deleteProduct'])->name('admin.deleteproduct');
 
     // অর্ডার
-    Route::get('/view_order', [AdminController::class, 'viewOrders'])->name('admin.vieworders');
-    Route::get('/invoice/{id}', [AdminController::class, 'downloadInvoice'])->name('admin.downloadinvoice');
-    Route::post('/status/{id}', [AdminController::class, 'updateOrderStatus'])->name('admin.updateorderstatus');
 
 });
