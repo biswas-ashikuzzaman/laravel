@@ -146,29 +146,29 @@ class AdminController extends Controller
 
         return redirect()->back()->with('product_message', 'Product deleted successfully!');
     }
-//   public function viewOrders()
-// {
-//     $orders = Order::latest()->paginate(10);
-//     return view('admin.vieworders', compact('orders'));
-// }
+  public function viewOrders()
+{
+    $orders = Order::latest()->paginate(10);
+    return view('admin.vieworders', compact('orders'));
+}
 
-// public function updateOrderStatus(Request $request, $id)
-// {
-//     $order = Order::findOrFail($id);
-//     $order->status = $request->status;
-//     $order->save();
+public function updateOrderStatus(Request $request, $id)
+{
+    $order = Order::findOrFail($id);
+    $order->status = $request->status;
+    $order->save();
 
-//     return redirect()->back()->with('order_message', 'Order status updated!');
-// }
-// public function downloadInvoice($id)
-// {
-//     $order = Order::findOrFail($id);
-//     $invoice = view('admin.invoice', compact('order'))->render();
+    return redirect()->back()->with('order_message', 'Order status updated!');
+}
+public function downloadInvoice($id)
+{
+    $order = Order::findOrFail($id);
+    $invoice = view('admin.invoice', compact('order'))->render();
 
-//     return response()->streamDownload(function () use ($invoice) {
-//         echo $invoice;
-//     }, 'invoice_' . $order->id . '.html');
-// }
+    return response()->streamDownload(function () use ($invoice) {
+        echo $invoice;
+    }, 'invoice_' . $order->id . '.html');
+}
 // Product details 
 
 // public function adminOrders(){
