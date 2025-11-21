@@ -106,5 +106,8 @@ foreach($carts as $cart){
 }
 return redirect()->back()->with('confirm_your_order','Your Order Confirmed');
     }
-    
+    public function myOrders(){
+        $orders=Order::where('user_id',Auth::id())->get();
+        return view('viewmyorder',compact('orders'));
+    }
 }
