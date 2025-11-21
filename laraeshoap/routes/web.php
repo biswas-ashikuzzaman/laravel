@@ -43,6 +43,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [UserController::class, 'index'])
         ->middleware('verified') // ইমেল ভেরিফিকেশন চেক
         ->name('dashboard');
+         Route::get('/myorders', [UserController::class, 'myOrders'])
+        ->middleware('auth','verified') // ইমেল ভেরিফিকেশন চেক
+        ->name('myorders');
 
     // ৬. প্রোফাইল ম্যানেজমেন্ট
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

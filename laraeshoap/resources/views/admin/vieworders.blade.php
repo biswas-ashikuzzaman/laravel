@@ -16,7 +16,7 @@
                 <th>Email</th>
                 <th>Total</th>
                 <th>Status</th>
-                <th>Actions</th>
+                <th>Product Image</th>
                 <th>Invoice</th>
             </tr>
         </thead>
@@ -24,9 +24,10 @@
             @foreach($orders as $order)
                 <tr>
                     <td>{{ $order->id }}</td>
-                    <td>{{ $order->customer_name }}</td>
-                    <td>{{ $order->customer_email }}</td>
-                    <td>৳{{ $order->total_price }}</td>
+                    <td>{{ $order->user->name }}</td>
+                    <td>{{ $order->user->email }}</td>
+                    <td>৳{{ $order->product->product_price }}</td>
+                    
                     <td>
                         <form action="{{ route('admin.updateorderstatus', $order->id) }}" method="POST">
                             @csrf
@@ -37,6 +38,7 @@
                             </select>
                         </form>
                     </td>
+                     <td>{{ $order->product->product_image}}</td>
                     <td>
                         <a href="{{ route('admin.downloadinvoice', $order->id) }}" class="btn btn-sm btn-info">Download Invoice</a>
                     </td>
