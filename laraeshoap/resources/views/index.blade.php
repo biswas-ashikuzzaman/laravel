@@ -44,11 +44,6 @@
        type="button" 
        class="btn btn-success">🛒 Add to Cart</a> <br> <br>
 
-
-       <a href="#" 
-       type="button" 
-       class="btn btn-success">Pay Now</a>
-
 </div>
 
                 </div>

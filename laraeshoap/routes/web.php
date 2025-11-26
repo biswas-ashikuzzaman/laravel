@@ -79,7 +79,7 @@ Route::get('/view_order', [AdminController::class, 'viewOrders'])->name('admin.v
     Route::get('/invoice/{id}', [AdminController::class, 'downloadInvoice'])->name('admin.downloadinvoice');
     Route::post('/status/{id}', [AdminController::class, 'updateOrderStatus'])->name('admin.updateorderstatus');
     Route::controller(UserController::class)->middleware(['auth','verified'])->group(function(){
-    Route::get('stripe', 'stripe')->name('stripe');
+    Route::get('stripe/{price}', 'stripe')->name('stripe');
     Route::post('stripe', 'stripePost')->name('stripe.post'); });
     
 });

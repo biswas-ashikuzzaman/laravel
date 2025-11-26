@@ -1,4 +1,5 @@
 @extends('maindesign')
+<base href="/public">
 @section('stripe_view')
 
 <div class="container mt-5">
@@ -62,7 +63,7 @@
 
                         <div class="form-group text-center mt-3">
                             <button class="btn btn-success btn-lg btn-block" type="submit">
-                                Pay Now ($100)
+                                Pay Now BDT({{$price}})
                             </button>
                         </div>
 

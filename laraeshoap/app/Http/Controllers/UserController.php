@@ -119,7 +119,7 @@ return redirect()->back()->with('confirm_your_order','Your Order Confirmed');
 
      */
 
-    public function stripe()
+    public function stripe($price )
 
     {
          if (Auth::check()) {
@@ -130,8 +130,8 @@ return redirect()->back()->with('confirm_your_order','Your Order Confirmed');
            $count = '';
            
         }
-
-        return view('stripe', compact('count'));
+$price=$price;
+        return view('stripe', compact('count','price'));
 
     }
     public function stripePost(Request $request)
