@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\ProductCart;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 use Stripe;
 
@@ -122,8 +122,16 @@ return redirect()->back()->with('confirm_your_order','Your Order Confirmed');
     public function stripe()
 
     {
+         if (Auth::check()) {
+         $count = ProductCart::where('user_id', Auth::id())->count();
+        $cart = ProductCart::where('user_id', Auth::id())->with('product')->get();
+      
+        } else {
+           $count = '';
+           
+        }
 
-        return view('stripe');
+        return view('stripe', compact('count'));
 
     }
     public function stripePost(Request $request)
