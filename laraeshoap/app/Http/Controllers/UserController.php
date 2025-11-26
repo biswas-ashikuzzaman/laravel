@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\ProductCart;
+use Session;
+
+use Stripe;
 
 use App\Models\Order;
 use Illuminate\Container\Attributes\Auth as AttributesAuth;
@@ -109,5 +112,22 @@ return redirect()->back()->with('confirm_your_order','Your Order Confirmed');
     public function myOrders(){
         $orders=Order::where('user_id',Auth::id())->get();
         return view('viewmyorder',compact('orders'));
+    }
+    /**
+
+     * success response method.
+
+     *
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function stripe()
+
+    {
+
+        return view('stripe');
+
     }
 }
