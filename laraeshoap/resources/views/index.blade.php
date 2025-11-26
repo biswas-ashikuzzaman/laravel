@@ -34,11 +34,22 @@
                     </a>
 
                     <div class="card-footer bg-white text-center">
-                        <a href="#" 
-                           class="btn btn-sm btn-primary w-100">
-                           <i class="fa fa-shopping-cart"></i> Add to Cart
-                        </a>
-                    </div>
+
+    <!-- Preview Button -->
+    <a href="{{ route('product_details',$product->id) }}" 
+       class="btn btn-primary me-2">👁 Preview</a> <br> <br>
+
+    <!-- Add to Cart Button -->
+    <a href="{{ route('add_to_cart',$product->id) }}" 
+       type="button" 
+       class="btn btn-success">🛒 Add to Cart</a> <br> <br>
+
+
+       <a href="#" 
+       type="button" 
+       class="btn btn-success">Pay Now</a>
+
+</div>
 
                 </div>
             </div>
