@@ -121,7 +121,7 @@
                 <div class="card shadow-sm">
                     <div class="card-header bg-light fw-bold">Cart Summary</div>
                     <div class="card-body">
-                        <table class="table table-sm table-borderless">
+                        {{-- <table class="table table-sm table-borderless">
                             <tbody>
                                 <tr>
                                     <td>Subtotal:</td>
@@ -140,7 +140,7 @@
                                     <td class="text-end fw-bold fs-5 text-success">BDT {{ number_format($grand_total, 2) }}</td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table> --}}
                          <form action="{{ route('confirm_order') }}" method="post">
                             @csrf
                     <input type="text" name="receiver_address" placeholder="Enter Your Address" required> <br> <br><br>
