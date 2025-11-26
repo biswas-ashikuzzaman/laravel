@@ -146,6 +146,9 @@
                     <input type="text" name="receiver_address" placeholder="Enter Your Address" required> <br> <br><br>
                     <input type="text" name="receiver_phone" placeholder="Enter Your Phone Number" required><br> <br><br>
                     <input class="btn btn-primary" type="submit" type="submit" name="submit" value="Confirm Order"><br> <br><br>
+                    <a href="{{ route('stripe') }}" 
+       type="button" 
+       class="btn btn-success">Pay Now</a>
                     
                         {{-- <div class="d-grid gap-2 mt-3">
                             <a href="#" class="btn btn-success btn-lg">

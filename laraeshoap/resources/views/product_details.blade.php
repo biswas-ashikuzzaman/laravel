@@ -43,6 +43,9 @@
             <div class="mt-3">
                 <a href="{{ route('add_to_cart',$product->id) }}" type="button" class="btn btn-success">🛒 Add to Cart</a>
                 <button type="button" class="btn btn-outline-danger">❤️ Add to Wishlist</button>
+                 <a href="#" 
+       type="button" 
+       class="btn btn-success">Pay Now</a>
             </div>
         </div>
     </div>
