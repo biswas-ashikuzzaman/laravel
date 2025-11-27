@@ -4,7 +4,7 @@
 
 <div class="container mt-5">
 
-    <h1 class="mb-4">Laravel 12 - Stripe Payment Gateway Integration Example</h1>
+    <h1 class="mb-4">Online Payment Gateway. Please Insert Your Information</h1>
 
     <div class="row justify-content-center">
         <div class="col-md-6">
