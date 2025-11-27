@@ -98,7 +98,7 @@ foreach($cart_product_id as $cart_product){
 $order->receiver_address= $address;
 $order->receiver_phone=$phone;
 $order->user_id=Auth::id();
-$order->product_id=$cart_product->product_id;
+$order->product_id=$cart_product->user_id;
 $order->save();
 
 }

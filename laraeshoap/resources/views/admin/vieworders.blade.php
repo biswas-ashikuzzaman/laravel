@@ -27,25 +27,26 @@
                 <tr>
                     <td class="text-center fw-bold">{{ $order->id }}</td>
 
-                    <td>{{ $order->user->name }}</td>
-                    <td>{{ $order->user->email }}</td>
+                    <td>{{ $order->user->name ?? 'Unknown User' }}</td>
+                    <td>{{ $order->user->email ?? 'N/A' }}</td>
 
+                    {{-- SAFE PRODUCT PRICE --}}
                     <td class="fw-bold text-success">
-                        ৳{{ $order->product->product_price }}
+                        ৳{{ optional($order->product)->product_price ?? 'N/A' }}
                     </td>
 
-                    {{-- STATUS DROPDOWN WITH WORKING COLOR --}}
+                    {{-- STATUS DROPDOWN --}}
                     <td>
                         <form action="{{ route('admin.updateorderstatus', $order->id) }}" method="POST">
                             @csrf
 
                             @php
                                 if ($order->status == 'Pending') {
-                                    $bg = 'bg-warning text-dark'; // Yellow
+                                    $bg = 'bg-warning text-dark';
                                 } elseif ($order->status == 'Delivered') {
-                                    $bg = 'bg-primary text-white'; // Blue
+                                    $bg = 'bg-primary text-white';
                                 } elseif ($order->status == 'Cancelled') {
-                                    $bg = 'bg-danger text-white'; // Red
+                                    $bg = 'bg-danger text-white';
                                 } else {
                                     $bg = 'bg-secondary text-white';
                                 }
@@ -66,7 +67,7 @@
                         </form>
                     </td>
 
-                    {{-- PAYMENT STATUS BADGE --}}
+                    {{-- PAYMENT STATUS --}}
                     <td class="text-center">
                         @if($order->payment_status == 'Paid')
                             <span class="badge bg-success px-3 py-2">Paid</span>
