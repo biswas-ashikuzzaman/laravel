@@ -1,0 +1,7 @@
+database name: ashikuz7_ecommerce
+database username: ashikuz7_ecommerce
+database password: #B]ygioIqwWk[#jX
+
+
+User: ashikuz7_ecommerce
+Database: ashikuz7_ecommerce
